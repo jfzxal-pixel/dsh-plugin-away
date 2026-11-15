@@ -156,7 +156,7 @@ MIT
 dsh plugin --profile desktop add dsh-plugin-away
 
 # from this repository
-dsh plugin --profile desktop add github:<your-name>/dsh-plugin-away
+dsh plugin --profile desktop add github:jfzxal-pixel/dsh-plugin-away
 
 # from a local checkout
 dsh plugin --profile desktop add ./dsh-plugin-away
@@ -172,11 +172,11 @@ This repo ships one at `market/index.json`.
 Add it in **设置 → 插件 → 市场 → 添加索引**，URL 填：
 
 ```
-https://raw.githubusercontent.com/<your-name>/dsh-plugin-away/main/market/index.json
+https://raw.githubusercontent.com/jfzxal-pixel/dsh-plugin-away/main/market/index.json
 ```
 
 `market/index.json` 里的 `versions[].source` 用 `{"type":"npm"}`（发布到 npm 后）
-或 `{"type":"git","url":"https://github.com/<your-name>/dsh-plugin-away","commit":"<sha>"}`
+或 `{"type":"git","url":"https://github.com/jfzxal-pixel/dsh-plugin-away","commit":"<sha>"}`
 （不用 npm，直接从 GitHub 装）。
 
 ## License

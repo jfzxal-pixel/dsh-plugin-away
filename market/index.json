@@ -17,7 +17,7 @@
         "en": "A /away switch that pushes a notification to your phone when a turn finishes while you are away from the desk.",
         "zh": "输入框里的 /away 开关：人不在电脑前时，任务跑完主动推送通知。"
       },
-      "author": "REPLACE_WITH_YOUR_GITHUB_NAME",
+      "author": "jfzxal-pixel",
       "metadata": {
         "category": "notification",
         "keywords": ["notification", "away", "wechat", "notify", "dsh-plugin"]
@@ -26,7 +26,7 @@
         {
           "version": "0.1.2",
           "publishTimestamp": 1763200000,
-          "source": { "type": "npm" },
+          {"source": {"type": "git", "url": "https://github.com/jfzxal-pixel/dsh-plugin-away", "commit": "c9c701ca876b1e9b98d20547d2f11ee015241de6" },
           "engines": { "dsh": ">=0.2.0" }
         }
       ]
