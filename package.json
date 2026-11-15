@@ -1,0 +1,37 @@
+{
+    "name":  "dsh-plugin-away",
+    "version":  "0.1.2",
+    "description":  "Away mode for DeepSeek Harness: a /away switch that pushes a notification when a turn finishes while you are away from the desk.",
+    "keywords":  [
+                     "dsh",
+                     "dsh-plugin",
+                     "deepseek-harness",
+                     "notification",
+                     "away-mode"
+                 ],
+    "type":  "module",
+    "main":  "lib/index.js",
+    "exports":  {
+                    ".":  "./lib/index.js",
+                    "./cordis.patch.yml":  "./cordis.patch.yml",
+                    "./package.json":  "./package.json"
+                },
+    "files":  [
+                  "lib/index.js",
+                  "cordis.patch.yml",
+                  "examples",
+                  "README.md",
+                  "LICENSE",
+                  "PUBLISHING.md"
+              ],
+    "license":  "MIT",
+    "engines":  {
+                    "node":  "\u003e=20"
+                },
+    "dsh":  {
+                "manifestVersion":  1,
+                "bundle":  {
+                               "patch":  "./cordis.patch.yml"
+                           }
+            }
+}

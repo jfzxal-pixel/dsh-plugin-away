@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "title": { "en": "Away Mode & Friends", "zh": "离开模式插件索引" },
+    "description": { "en": "Unofficial DeepSeek Harness plugin index.", "zh": "非官方 DeepSeek Harness 插件索引。" }
+  },
+  "categories": [
+    { "id": "notification", "title": { "en": "Notifications", "zh": "通知提醒" } }
+  ],
+  "labels": [],
+  "sortKeys": [],
+  "plugins": [
+    {
+      "name": "dsh-plugin-away",
+      "title": { "en": "Away mode", "zh": "离开模式" },
+      "description": {
+        "en": "A /away switch that pushes a notification to your phone when a turn finishes while you are away from the desk.",
+        "zh": "输入框里的 /away 开关：人不在电脑前时，任务跑完主动推送通知。"
+      },
+      "author": "REPLACE_WITH_YOUR_GITHUB_NAME",
+      "metadata": {
+        "category": "notification",
+        "keywords": ["notification", "away", "wechat", "notify", "dsh-plugin"]
+      },
+      "versions": [
+        {
+          "version": "0.1.2",
+          "publishTimestamp": 1763200000,
+          "source": { "type": "npm" },
+          "engines": { "dsh": ">=0.2.0" }
+        }
+      ]
+    }
+  ]
+}

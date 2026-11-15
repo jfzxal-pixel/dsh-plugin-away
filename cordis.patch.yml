@@ -1,0 +1,25 @@
+# away-mode bundle patch: inserts one host row.
+#
+# A `- insert:` list appends rows that downstream layers can still override by
+# id. Users override this row's config in their profile's own cordis.patch.yml:
+#
+#   - id: away-mode
+#     config:
+#       minTurnSeconds: 60
+#       notify:
+#         mode: command
+#         command: 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'
+#         args: ['-NoProfile', '-File', 'C:\tools\notify.ps1', '-Text', '{{message}}']
+#
+- insert:
+    - id: away-mode
+      name: 'dsh-plugin-away'
+      config:
+        minTurnSeconds: 90
+        label: '离开模式'
+        notify:
+          # "log" needs no setup and writes to $DSH_HOME/away-mode.log.
+          # Switch to "command" and fill command/args to reach your phone.
+          mode: log
+          command: ''
+          args: []
