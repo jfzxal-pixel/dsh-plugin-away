@@ -1,14 +1,14 @@
 {
-  "schemaVersion": 1,
+  "format": 1,
+  "title": { "en": "Away Mode & Friends", "zh": "离开模式插件索引" },
+  "description": { "en": "Unofficial DeepSeek Harness plugin index.", "zh": "非官方 DeepSeek Harness 插件索引。" },
   "metadata": {
-    "title": { "en": "Away Mode & Friends", "zh": "离开模式插件索引" },
-    "description": { "en": "Unofficial DeepSeek Harness plugin index.", "zh": "非官方 DeepSeek Harness 插件索引。" }
+    "categories": {
+      "notification": { "title": { "en": "Notifications", "zh": "通知提醒" } }
+    },
+    "labels": {},
+    "sortKeys": {}
   },
-  "categories": [
-    { "id": "notification", "title": { "en": "Notifications", "zh": "通知提醒" } }
-  ],
-  "labels": [],
-  "sortKeys": [],
   "plugins": [
     {
       "name": "dsh-plugin-away",
@@ -26,7 +26,11 @@
         {
           "version": "0.1.2",
           "publishTimestamp": 1763200000,
-          {"source": {"type": "git", "url": "https://github.com/jfzxal-pixel/dsh-plugin-away", "commit": "c9c701ca876b1e9b98d20547d2f11ee015241de6" },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/jfzxal-pixel/dsh-plugin-away",
+            "commit": "860d4b8c4fa11e1e3d1b0b0f3f6133387879354e"
+          },
           "engines": { "dsh": ">=0.2.0" }
         }
       ]
