@@ -4,3 +4,6 @@ pnpm-lock.yaml
 *.tgz
 .DS_Store
 Thumbs.db
+
+# machine-specific bridge config
+wechat-bridge/bridge.config.json

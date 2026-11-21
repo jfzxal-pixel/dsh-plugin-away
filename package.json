@@ -1,6 +1,6 @@
 {
     "name":  "dsh-plugin-away",
-    "version":  "0.1.2",
+    "version":  "0.1.3",
     "description":  "Away mode for DeepSeek Harness: a /away switch that pushes a notification when a turn finishes while you are away from the desk.",
     "keywords":  [
                      "dsh",
@@ -22,7 +22,8 @@
                   "examples",
                   "README.md",
                   "LICENSE",
-                  "PUBLISHING.md"
+                  "PUBLISHING.md",
+                  "wechat-bridge"
               ],
     "license":  "MIT",
     "engines":  {

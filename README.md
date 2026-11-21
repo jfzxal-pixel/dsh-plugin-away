@@ -143,41 +143,63 @@ powershell -NoProfile -ExecutionPolicy Bypass -File examples/away-toggle.ps1
 - 重复保护是「同一轮不重复通知」（内存态）；插件热重载后对**正在进行**的那一轮不再补发。
 - `notify.mode: command` 是即发即忘（不等待退出码），失败不会阻塞会话；排查请看 `$DSH_HOME/away-mode.log` 里 `[away-mode]` 开头的 stderr。
 
-## License
+## 双向：微信里下发指令（可选，Windows）
 
-MIT
+`wechat-bridge/` 是一套配套脚本，让「你在手机微信里说话 → 电脑上真的干活 → 结果回到微信」：
 
----
+| 文件 | 作用 |
+|---|---|
+| `bridge.ps1` | 读微信「文件传输助手」的新消息，交给 `dsh headless` 执行，再把结果发回去 |
+| `watchdog.ps1` | 守护进程：每 30 秒巡检，桥接挂了或心跳停了就自动拉起 |
+| `start-all.ps1` | 启动守护进程（放进启动文件夹即可开机自启） |
+| `bridge.config.example.json` | 复制成 `bridge.config.json`，填 `dsh` 路径和工作目录 |
 
-## Install
+### 和 `/away` 的关系
+
+桥接**只在离开模式开启时才操作微信窗口**。关闭时它完全不碰微信——不切换会话、不抢前台，你可以照常和别人聊天。
+
+```
+/away 开启  →  桥接开始读消息、切会话、回消息
+/away 关闭  →  桥接彻底静默，只保留心跳
+```
+
+开启时会先重建基线，所以关闭期间的历史消息不会被误当成指令执行。
+
+### 安装
+
+1. 把 `wechat-bridge/` 放到一个固定位置
+2. 复制 `bridge.config.example.json` → `bridge.config.json`，改里面的四个路径
+3. `powershell -File start-all.ps1`，并把它的快捷方式放进启动文件夹
+
+> 仅 Windows：依赖微信 PC 客户端的 UI 自动化。微信必须登录且不要把窗口退出到托盘。
+## 安装（其他方式）
 
 ```bash
-# from npm (after publish)
+# npm（发布后）
 dsh plugin --profile desktop add dsh-plugin-away
 
-# from this repository
+# 直接从本仓库
 dsh plugin --profile desktop add github:jfzxal-pixel/dsh-plugin-away
 
-# from a local checkout
+# 本地目录
 dsh plugin --profile desktop add ./dsh-plugin-away
 ```
 
-Then restart DeepSeek Harness and type `/away` in the composer.
+装完重启 DeepSeek Harness，在输入框打 `/away` 即可。
 
-## Plugin market
+## 插件市场
 
-DSH's plugin market is index-based: users add an index URL, then browse.
-This repo ships one at `market/index.json`.
+DSH 的插件市场是**索引制**：用户添加一个索引 URL，市场从那里读 JSON。
 
-Add it in **设置 → 插件 → 市场 → 添加索引**，URL 填：
+本仓库自带一份：`market/index.json`
+
+在「设置 → 插件 → 市场 → 添加索引」填入：
 
 ```
 https://raw.githubusercontent.com/jfzxal-pixel/dsh-plugin-away/main/market/index.json
 ```
 
-`market/index.json` 里的 `versions[].source` 用 `{"type":"npm"}`（发布到 npm 后）
-或 `{"type":"git","url":"https://github.com/jfzxal-pixel/dsh-plugin-away","commit":"<sha>"}`
-（不用 npm，直接从 GitHub 装）。
+索引里的 `versions[].source` 目前指向本仓库的某个 commit（Git 源）；发布到 npm 后可改成 `{"type":"npm"}`。
 
 ## License
 
