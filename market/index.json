@@ -14,8 +14,8 @@
       "name": "dsh-plugin-away",
       "title": { "en": "Away mode", "zh": "离开模式" },
       "description": {
-        "en": "A /away switch that pushes a notification to your phone when a turn finishes while you are away from the desk.",
-        "zh": "输入框里的 /away 开关：人不在电脑前时，任务跑完主动推送通知。"
+        "en": "A /away switch that pushes a notification to your phone when a turn finishes while you are away, plus an optional WeChat bridge for sending instructions back.",
+        "zh": "输入框里的 /away 开关：人不在电脑前时，任务跑完主动推送通知；附带可选的微信桥接，让手机发指令也能干活。"
       },
       "author": "jfzxal-pixel",
       "metadata": {
@@ -24,12 +24,12 @@
       },
       "versions": [
         {
-          "version": "0.1.2",
-          "publishTimestamp": 1763200000,
+          "version": "0.1.3",
+          "publishTimestamp": 1795253146,
           "source": {
             "type": "git",
             "url": "https://github.com/jfzxal-pixel/dsh-plugin-away",
-            "commit": "860d4b8c4fa11e1e3d1b0b0f3f6133387879354e"
+            "commit": "7a090751ac9d11f74b4faa6f05bc58c806af9736"
           },
           "engines": { "dsh": ">=0.2.0" }
         }
